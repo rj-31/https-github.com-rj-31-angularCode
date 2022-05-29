@@ -1,0 +1,25 @@
+<ng-container *ngIf="flag; else msg">
+  <button *ngFor="let a of arr">You can see me</button>
+</ng-container>
+<ng-template #msg>Flag is set to false</ng-template>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>DOB</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+
+  <tr
+    *ngFor="let d of data; index as i; even as e; odd as o"
+    [ngStyle]="{ 'background-color': i % 2 == 0 ? 'pink' : 'white' }"
+  >
+    <th>{{ d.name  }}</th>
+    <th>{{ d.age }}</th>
+    <th>{{ d.dob | date: 'dd/mm/y' }}</th>
+    <th>{{ d.salary }}</th>
+  </tr>
+</table>
