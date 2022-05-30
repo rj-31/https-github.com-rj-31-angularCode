@@ -14,7 +14,7 @@
   </thead>
 
   <tr
-    *ngFor="let d of data; index as i; even as e; odd as o"
+    *ngFor="let d of (data | sort); index as i; even as e; odd as o"
     [ngStyle]="{ 'background-color': i % 2 == 0 ? 'pink' : 'white' }"
   >
     <th>{{ d.name  }}</th>
